@@ -6,7 +6,6 @@ ${BINARY_NAME}:
 
 install: ${BINARY_NAME}
 	@echo; sudo install ${BINARY_NAME} -v -s -m 0770 -o root -g root -t ${INSTALL_PATH}
-	@echo; sudo mkdir -m 0770 -pv ${CONFIG_PATH};
 
 clean:
 	@echo; go clean
