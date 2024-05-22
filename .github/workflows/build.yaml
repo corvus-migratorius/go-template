@@ -30,3 +30,6 @@ jobs:
 
     - name: Run
       run: sudo app --version
+    
+    - name: Cleanup
+      run: make clean
