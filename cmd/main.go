@@ -7,7 +7,7 @@ import (
 	"github.com/akamensky/argparse"
 )
 
-var Version = "development"
+var version = "development"
 
 // Args represents parsed CLI arguments
 type args struct {
@@ -15,7 +15,7 @@ type args struct {
 }
 
 func parseArgs() args {
-	parser := argparse.NewParser(fmt.Sprintf("app %s", Version), "Template app")
+	parser := argparse.NewParser(fmt.Sprintf("app %s", version), "Template app")
 	showVersion := parser.Flag("V", "version", &argparse.Options{Required: false, Help: "Display program version and exit", Default: false})
 
 	err := parser.Parse(os.Args)
@@ -24,7 +24,7 @@ func parseArgs() args {
 	}
 
 	if *showVersion {
-		fmt.Println(Version)
+		fmt.Println(version)
 		os.Exit(0)
 	}
 
