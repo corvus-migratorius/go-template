@@ -1,6 +1,6 @@
 BINARY_NAME=app
 INSTALL_PATH=/usr/bin/
-TAG=$(shell git describe --abbrev=0 || echo "0.0.1")
+TAG=$(shell git describe --abbrev=0 2> /dev/null || echo "0.0.1")
 HASH=$(shell git rev-parse --verify --short HEAD)
 
 ${BINARY_NAME}:
