@@ -9,14 +9,14 @@ import (
 
 var version = "development"
 
-// Args represents parsed CLI arguments
-type args struct {
-	Version bool
-}
+type appArgs struct{}
 
-func parseArgs() args {
+func parseArgs() appArgs {
 	parser := argparse.NewParser(fmt.Sprintf("app %s", version), "Template app")
-	showVersion := parser.Flag("V", "version", &argparse.Options{Required: false, Help: "Display program version and exit", Default: false})
+	showVersion := parser.Flag(
+		"V", "version",
+		&argparse.Options{Required: false, Help: "Display program version and exit", Default: false},
+	)
 
 	err := parser.Parse(os.Args)
 	if err != nil {
@@ -28,7 +28,7 @@ func parseArgs() args {
 		os.Exit(0)
 	}
 
-	return args{}
+	return appArgs{}
 }
 
 func main() {
