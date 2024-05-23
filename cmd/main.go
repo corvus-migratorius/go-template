@@ -12,7 +12,7 @@ var version = "development"
 type appArgs struct{}
 
 func parseArgs() appArgs {
-	parser := argparse.NewParser(fmt.Sprintf("app %s", version), "Template app")
+	parser := argparse.NewParser(fmt.Sprintf("template %s", version), "Template template")
 	showVersion := parser.Flag(
 		"V", "version",
 		&argparse.Options{Required: false, Help: "Display program version and exit", Default: false},
