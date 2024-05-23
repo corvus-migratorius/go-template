@@ -22,7 +22,13 @@ jobs:
       with:
         go-version: '1.22'
 
-    - name: Build
+    - name: Build with debug info
+      run: make debug
+
+    - name: Clean up
+      run: make clean
+
+    - name: Build for production
       run: make
 
     - name: Install
@@ -31,5 +37,5 @@ jobs:
     - name: Run
       run: sudo app --version
     
-    - name: Cleanup
+    - name: Clean up
       run: make clean
