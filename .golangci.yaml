@@ -1,10 +1,21 @@
----
-# enable revive linter
+version: "2"
 linters:
   enable:
     - revive
-
-issues:
-  include:
-    - EXC0012  # EXC0012 revive: Issue about not having a comment.
-    - EXC0014  # EXC0014 revive: Issue about not having a comment.
+  exclusions:
+    generated: lax
+    presets:
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
