@@ -1,3 +1,4 @@
+/* Primary module */
 package main
 
 import (
